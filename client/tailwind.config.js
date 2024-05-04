@@ -6,6 +6,14 @@ export default {
   ],
   theme: {
     extend: {},
+    colors: {
+      primary: '#ffffff',
+      darkBrown: '#464038'
+    },
+    fontFamily: {
+      crimson: ['Crimson Text', 'serif'],
+      sans: ['Open Sans', 'sans-serif'],
+    },
   },
   plugins: [],
 }
