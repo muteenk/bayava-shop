@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+<<<<<<< HEAD
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -17,3 +18,16 @@ export default {
   },
   plugins: [],
 }
+=======
+	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+	theme: {
+		fontFamily: {
+			"open-sans": ["Open Sans", "sans-serif"],
+			"crimson": ["Crimson Text", "serif"],
+			"crimson-pro": ["Crimson Pro", "serif"],
+		},
+		extend: {},
+	},
+	plugins: [],
+};
+>>>>>>> upstream/main
