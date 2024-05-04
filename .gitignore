@@ -1,0 +1,35 @@
+# Node.js dependencies
+node_modules/
+
+# Dependency directories
+package-lock.json
+npm-debug.log
+
+# Environment variables
+.env
+
+# Compiled files
+*.log
+*.pem
+*.pid
+*.seed
+*.sock
+*.swp
+*.tgz
+*.zip
+
+# OS generated files
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Miscellaneous
+*.bak
+*.orig
+*.tmp
+*.backup
+*.DS_Store

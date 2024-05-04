@@ -1,1 +1,0 @@
-# bayava-shop
