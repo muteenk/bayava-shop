@@ -87,7 +87,7 @@ function Navbar() {
 					</ul>
 				</div>
 			</nav>
-			{/* <MiniNavbar /> */}
+			<MiniNavbar />
 		</div>
 	);
 }
