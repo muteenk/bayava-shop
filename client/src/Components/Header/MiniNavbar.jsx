@@ -6,10 +6,10 @@ function MiniNavbar() {
     <div className='w-full flex items-center justify-between h-10 bg-slate-200 drop-shadow-lg'>
         <ul className='flex items-center justify-between w-full px-80'>
             <li>
-                <Link to="/">Yoga Store</Link>
+                <Link to="/yoga-store">Yoga Store</Link>
             </li>
             <li>
-                <Link to="/">Auyrveda Store</Link>
+                <Link to="/ayurveda-store">Ayurveda Store</Link>
             </li>
         </ul>
     </div>
