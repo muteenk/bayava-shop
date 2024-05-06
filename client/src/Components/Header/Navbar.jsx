@@ -14,8 +14,8 @@ function Navbar() {
 
 	
 	return (
-		<div className="fixed top-0 left-0 z-100 w-full h-20">
-			<nav className="w-full py-[10px] px-[6em] flex items-center justify-around bg-[#eeeeee] drop-shadow-lg">
+		<div className="w-full">
+			<nav className="w-full py-[10px] px-[6em] flex items-center justify-around bg-softGray drop-shadow-lg">
 				<div>
 					<form
 						action=""
@@ -24,9 +24,9 @@ function Navbar() {
 						<input
 							type="text"
 							placeholder="Search"
-							className="bg-slate-200 focus:outline-none font-crimson-pro text-lg font-medium w-70 rounded-md py-[8px] px-6 border border-r-0 rounded-r-none border-smokeBrown transition-all duration-300 ease-in-out"
+							className="bg-slate-200 focus:outline-none font-crimson-pro text-lg font-medium w-70 rounded-md py-[8px] px-6 border border-r-0 rounded-r-none border-midGray transition-all duration-300 ease-in-out"
 						/>
-						<button className="py-[10px] px-7 border border-l-0 border-smokeBrown rounded-md rounded-l-none">
+						<button className="bg-[white] hover:bg-softGray py-[10px] px-7 border border-l-0 border-midGray rounded-md rounded-l-none">
 							<i className="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</form>
@@ -40,8 +40,8 @@ function Navbar() {
 				<div></div>
 				<div className="flex items-center justify-between gap-5">
 					<ul className="flex items-center justify-between">
-						<li className="auth inline-block relative items-center justify-between mx-4 font-crimson-pro text-xl font-medium">
-							<button className="text-lg font-semibold inline-flex items-center" onClick={toggleAuthMenu}>
+						<li className="relative mx-4">
+							<button className="text-lg font-semibold items-center" onClick={toggleAuthMenu}>
 								<i class="fa-solid fa-user"></i>
 							</button>
 							{

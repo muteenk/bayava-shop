@@ -10,7 +10,10 @@ export default {
 		colors: {
 			smokeYellow: "#e0d7c8",
 			smokeBrown: "#463e38",
-			hoverOverBrown: "#db6435"
+			softGray: '#e7e7e7',
+			midGray: "#A6A6A6",
+			hoverOverBrown: "#db6435",
+			bayavaOrange: "#cc582a"
 		},
 		extend: {},
 	},
