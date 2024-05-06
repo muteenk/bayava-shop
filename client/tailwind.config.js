@@ -7,6 +7,11 @@ export default {
 			"crimson": ["Crimson Text", "serif"],
 			"crimson-pro": ["Crimson Pro", "serif"],
 		},
+		colors: {
+			smokeYellow: "#e0d7c8",
+			smokeBrown: "#463e38",
+			hoverOverBrown: "#db6435"
+		},
 		extend: {},
 	},
 	plugins: [],
