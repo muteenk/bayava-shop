@@ -14,7 +14,7 @@ function Navbar() {
 
 	
 	return (
-		<div className="w-full">
+		<div className="relative top-0 left-0 z-40 w-full">
 			<nav className="w-full py-[10px] px-[6em] flex items-center justify-around bg-softGray drop-shadow-lg">
 				<div>
 					<form
@@ -40,7 +40,7 @@ function Navbar() {
 				<div></div>
 				<div className="flex items-center justify-between gap-5">
 					<ul className="flex items-center justify-between">
-						<li className="relative mx-4">
+						<li className="relative mx-4 z-50">
 							<button className="peer text-lg font-semibold items-center" onMouseEnter={toggleAuthMenu} onMouseLeave={toggleAuthMenu}>
 								<i class="fa-solid fa-user text-[#494949]"></i>
 							</button>

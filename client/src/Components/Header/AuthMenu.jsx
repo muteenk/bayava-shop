@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function AuthMenu() {
   return (
-    <div className="absolute top-[1.5em] left-[-2em]" style={{zIndex: 10}}>
+    <div className="absolute top-[1.5em] left-[-2em] z-50">
       <div className="mt-[1em] bg-[white] w-[18em] px-3 py-3 rounded-md">
         <header>
           <h1 className="font-bold font-crimson-pro text-[20px]">Namaskaram</h1>
