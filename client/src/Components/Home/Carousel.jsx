@@ -33,7 +33,7 @@ const Carousel = ({slides}) => {
                     {
                         (index === current) ? <>
                             <h1 className='fixed top-0 left-0 w-[30%] animate-fadeUp' style={{left: `${current*100}%`}}>{slide.title}</h1>
-                            <h1 className='fixed top-20 left-0 animate-fadeUp'  style={{left: `${current*100}%`}}>{slide.subTitle}</h1>
+                            <h1 className='fixed top-20 left-0 w-[30%] animate-fadeUp'  style={{left: `${current*100}%`}}>{slide.subTitle}</h1>
                         </> : null
                     }
                 </React.Fragment>
