@@ -1,9 +1,14 @@
-import React from 'react'
+import Carousel from "./Carousel"
+import CarouselData from "./HomeData"
 
 function Home() {
   return (
-    <div className='h-screen flex justify-center items-center'>
-        <h1 className='text-6xl'>Home</h1>
+    <div>
+      <div className="bg-gradient-to-b from-softGray to-[white] w-[90vw] mx-auto">
+        <div className="flex justify-center items-center w-[70vw] mx-auto">
+          <Carousel slides={CarouselData} />
+        </div>
+      </div>
     </div>
   )
 }
