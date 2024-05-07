@@ -30,6 +30,12 @@ const Carousel = ({slides}) => {
             slides.map((slide, index) => (
                 <React.Fragment key={index}>
                     <img src={slide.img} className="w-[90vw] opacity-75" alt={slide.alt} />
+                    {
+                        (index === current) ? <>
+                            <h1 className='fixed top-0 left-0 w-[30%] animate-fadeUp' style={{left: `${current*100}%`}}>{slide.title}</h1>
+                            <h1 className='fixed top-20 left-0 animate-fadeUp'  style={{left: `${current*100}%`}}>{slide.subTitle}</h1>
+                        </> : null
+                    }
                 </React.Fragment>
             ))
             }   
