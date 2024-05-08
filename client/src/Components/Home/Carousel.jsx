@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Carousel = ({slides}) => {
 
@@ -12,6 +12,11 @@ const Carousel = ({slides}) => {
         setCurrent(current === 0 ? slides.length - 1 : current - 1)
     }
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrent(current === slides.length - 1 ? 0 : current + 1)
+        }, 5000)
+        return () => clearInterval(interval)})
 
     const handleTransitionEnd = (e) => {
         if (current === slides.length - 1) {
@@ -24,16 +29,16 @@ const Carousel = ({slides}) => {
 
 
   return (
-    <div className="overflow-hidden h-[88vh] w-[90vw] relative bg-[#222222] z-0">
+    <div className="overflow-hidden h-[88vh] w-screen relative bg-[#222222] z-0">
         <div className='flex relative transition-transform duration-500 ease-out' style={{transform: `translateX(-${current*100}%)`, zIndex:1}}>
             {
             slides.map((slide, index) => (
                 <React.Fragment key={index}>
-                    <img src={slide.img} className="w-[90vw] opacity-75" alt={slide.alt} />
+                    <img src={slide.img} className=" object-fill opacity-50" alt={slide.alt} />
                     {
                         (index === current) ? <>
-                            <h1 className='fixed top-0 left-0 w-[30%] animate-fadeUp' style={{left: `${current*100}%`}}>{slide.title}</h1>
-                            <h1 className='fixed top-20 left-0 w-[30%] animate-fadeUp'  style={{left: `${current*100}%`}}>{slide.subTitle}</h1>
+                            <h1 className='fixed top-[11.5em] w-[30%] animate-fadeUp text-[#ff8a2b] font-crimson-pro font-bold text-[2em]'  style={{left: `${current*100+10}%`}}>{slide.subTitle}</h1>
+                            <h1 className='fixed top-[5em] w-[30%] animate-fadeUp font-crimson font-bold text-[5em] text-[white] drop-shadow-lg' style={{left: `${current*100+10}%`}}>{slide.title}</h1>
                         </> : null
                     }
                 </React.Fragment>
