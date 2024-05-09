@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Carousel from "./Carousel"
 import {CarouselData, ProductCardSliderData} from "./HomeData"
 import ImageCard from "../Elements/ImageCard"
@@ -31,16 +32,15 @@ function Home() {
         <div className="relative flex justify-center items-center w-[60vw] mx-auto z-10">
             <CardSlider>
               {ProductCardSliderData.map((product, index) => (
-                <div className="flex bg-[#ffffff] min-w-full " key={index}>
-                  <div className="min-w-[45%]">
-                    <img src={product.img} alt={product.alt} className="h-[20em]" />
+                <div className="relatve flex bg-[#ffffff] min-w-full h-[30em] " key={index}>
+                  <div className={`absolute top-0 left-[${index*100}%] min-w-full h-full`}>
+                    <img src={product.img} alt={product.alt} className="h-full w-full" />
                   </div>
-                  <div>
-                    <h1>{product.title}</h1>
-                    <p>{product.desc}</p>
-                    <h2>{product.price}</h2>
-                    <h3>{product.discount}</h3>
-                    <h4>{product.rating}</h4>
+                  <div className={`absolute top-0 right-[${index*100}%] w-full h-full flex flex-col justify-end items-end bg-gradient-to-l from-[black] to-[transparent] px-[2em]`}>
+                    <h1 className="text-right text-bayavaOrange text-[2em] font-semibold">{product.title}</h1>
+                    <p className="text-right text-[white] w-[60%] text-[14px] py-[1em]">{product.desc}</p>
+                    <h2 className="text-right text-[white]"><del className="font-medium text-solidGray">₹{product.price}</del><span className="mx-3 font-bold text-[20px]">₹{product.price - product.discount}</span></h2>
+                    <Link to={product.link} className="text-[white] bg-bayavaOrange px-8 py-2 rounded-sm my-5">Check Out</Link>
                   </div>
                 </div>
               ))}

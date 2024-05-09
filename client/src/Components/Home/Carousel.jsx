@@ -12,11 +12,11 @@ const Carousel = ({slides}) => {
         setCurrent(current === 0 ? slides.length - 1 : current - 1)
     }
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setCurrent(current === slides.length - 1 ? 0 : current + 1)
-    //     }, 5000)
-    //     return () => clearInterval(interval)})
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrent(current === slides.length - 1 ? 0 : current + 1)
+        }, 5000)
+        return () => clearInterval(interval)})
 
 
   return (
@@ -24,11 +24,12 @@ const Carousel = ({slides}) => {
         <div className='flex relative transition-transform duration-500 ease-out' style={{transform: `translateX(-${current*100}%)`, zIndex:1}}>
             {
             slides.map((slide, index) => (
-                <div key={index} className={`relative min-w-[100vw] h-[88vh] bg-cover bg-center`} style={{background: `url('${slide.img}')`, backgroundPosition: 'center'}}>
+                <div key={index} className={`relative min-w-[100vw] h-[88vh] bg-cover`} style={{background: `url('${slide.img}')`, backgroundPosition: 'center'}}>
+                    <div className="absolute h-full w-full bg-[#0000007e] z-0"></div>
                     {
                         (index === current) ? <>
-                            <h1 className='absolute top-[11.5em] left-[10%] w-[30%] animate-fadeUp text-[#ff8a2b] font-crimson-pro font-bold text-[2em]'>{slide.subTitle}</h1>
-                            <h1 className='absolute top-[5em] left-[10%] w-[30%] animate-fadeUp font-crimson font-bold text-[5em] text-[white] drop-shadow-lg'>{slide.title}</h1>
+                            <h1 className='absolute top-[11.5em] left-[10%] w-[30%] animate-fadeUp text-[#ff8a2b] font-crimson-pro font-bold text-[2em] z-10'>{slide.subTitle}</h1>
+                            <h1 className='absolute top-[5em] left-[10%] w-[30%] animate-fadeUp font-crimson font-bold text-[5em] text-[white] drop-shadow-lg z-10'>{slide.title}</h1>
                         </> : null
                     }
                 </div>
