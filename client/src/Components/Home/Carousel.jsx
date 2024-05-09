@@ -18,15 +18,6 @@ const Carousel = ({slides}) => {
         }, 5000)
         return () => clearInterval(interval)})
 
-    const handleTransitionEnd = (e) => {
-        if (current === slides.length - 1) {
-            setCurrent(0);
-        }
-        else if (current === 0) {
-            setCurrent(slides.length - 1);
-        }
-    }
-
 
   return (
     <div className="overflow-hidden h-[88vh] w-screen relative bg-[#222222] z-0">

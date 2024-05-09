@@ -19,11 +19,16 @@ export default {
 		extend: {
 			animation: {
 				fadeUp: 'fadeUp 1s ease-in-out forwards',
+				fadeIn: 'fadeIn 1s ease-in-out forwards',
 			},
 			keyframes: {
 				fadeUp: {
 					'0%': { opacity: 0, transform: 'translateY(50px)' },
 					'100%': { opacity: 1, transform: 'translateY(0)' },
+				},
+				fadeIn: {
+					'0%': { opacity: 0 },
+					'100%': { opacity: 1 },
 				},
 			},
 		},

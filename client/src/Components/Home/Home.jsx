@@ -1,6 +1,7 @@
 import Carousel from "./Carousel"
-import CarouselData from "./HomeData"
+import {CarouselData, ProductCardSliderData} from "./HomeData"
 import ImageCard from "../Elements/ImageCard"
+import CardSlider from "../Elements/CardSlider"
 
 function Home() {
   return (
@@ -24,9 +25,27 @@ function Home() {
           <h1 className="text-4xl text-[white]">Healthy and Immunity</h1>
         </ImageCard>
       </div>
-      <div className="relative bg-[url('https://images.unsplash.com/photo-1495461199391-8c39ab674295?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]"> 
+      <div className="relative pb-[3em] bg-[url('https://images.unsplash.com/photo-1495461199391-8c39ab674295?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-center bg-cover"> 
         <div className="absolute h-full w-full bg-[#0000009d] z-0"></div>
         <h1 className="relative text-[white] font-crimson font-bold text-[4em] text-center z-10 py-[1em]">Gracious Gifts</h1>
+        <div className="relative flex justify-center items-center w-[60vw] mx-auto z-10">
+            <CardSlider>
+              {ProductCardSliderData.map((product, index) => (
+                <div className="flex bg-[#ffffff] min-w-full " key={index}>
+                  <div className="min-w-[45%]">
+                    <img src={product.img} alt={product.alt} className="h-[20em]" />
+                  </div>
+                  <div>
+                    <h1>{product.title}</h1>
+                    <p>{product.desc}</p>
+                    <h2>{product.price}</h2>
+                    <h3>{product.discount}</h3>
+                    <h4>{product.rating}</h4>
+                  </div>
+                </div>
+              ))}
+            </CardSlider>
+        </div>
       </div>
     </div>
   )
