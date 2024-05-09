@@ -18,30 +18,21 @@ const Carousel = ({slides}) => {
         }, 5000)
         return () => clearInterval(interval)})
 
-    const handleTransitionEnd = (e) => {
-        if (current === slides.length - 1) {
-            setCurrent(0);
-        }
-        else if (current === 0) {
-            setCurrent(slides.length - 1);
-        }
-    }
-
 
   return (
-    <div className="overflow-hidden h-[88vh] w-screen relative bg-[#222222] z-0">
+    <div className="overflow-hidden h-[88vh] w-full relative z-0">
         <div className='flex relative transition-transform duration-500 ease-out' style={{transform: `translateX(-${current*100}%)`, zIndex:1}}>
             {
             slides.map((slide, index) => (
-                <React.Fragment key={index}>
-                    <img src={slide.img} className=" object-fill opacity-50" alt={slide.alt} />
+                <div key={index} className={`relative min-w-[100vw] h-[88vh] bg-cover`} style={{background: `url('${slide.img}')`, backgroundPosition: 'center'}}>
+                    <div className="absolute h-full w-full bg-[#0000007e] z-0"></div>
                     {
                         (index === current) ? <>
-                            <h1 className='fixed top-[11.5em] w-[30%] animate-fadeUp text-[#ff8a2b] font-crimson-pro font-bold text-[2em]'  style={{left: `${current*100+10}%`}}>{slide.subTitle}</h1>
-                            <h1 className='fixed top-[5em] w-[30%] animate-fadeUp font-crimson font-bold text-[5em] text-[white] drop-shadow-lg' style={{left: `${current*100+10}%`}}>{slide.title}</h1>
+                            <h1 className='absolute top-[11.5em] left-[10%] w-[30%] animate-fadeUp text-[#ff8a2b] font-crimson-pro font-bold text-[2em] z-10'>{slide.subTitle}</h1>
+                            <h1 className='absolute top-[5em] left-[10%] w-[30%] animate-fadeUp font-crimson font-bold text-[5em] text-[white] drop-shadow-lg z-10'>{slide.title}</h1>
                         </> : null
                     }
-                </React.Fragment>
+                </div>
             ))
             }   
         </div>
