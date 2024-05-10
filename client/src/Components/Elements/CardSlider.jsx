@@ -13,7 +13,7 @@ const CardSlider = ({ children: slides }) => {
 
   return (
     <>
-      <div className="overflow-hidden w-[85%] relative z-0">
+      <div className="overflow-hidden w-[86%] relative z-0 shadow-2xl">
         <div className='flex relative transition-transform duration-500 ease-out' style={{transform: `translateX(-${current*100}%)`}}>
           {slides}
         </div>
@@ -25,6 +25,13 @@ const CardSlider = ({ children: slides }) => {
         <button onClick={nextSlide} className="rounded-full bg-[white] font-bold text-[22px] px-[16px] py-[6px] hover:bg-softGray shadow-lg">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
+      </div>
+      <div className="absolute bottom-[-1.5em] flex">
+        {
+          slides.map((slide, index) => (
+            <div className={`h-2 w-2 rounded-full mx-2 ${(current === index) ? "bg-bayavaOrange" : "bg-[white]"}`}></div>
+          ))
+        }
       </div>
     </>
   );
