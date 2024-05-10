@@ -32,7 +32,7 @@ function Home() {
         <div className="relative flex justify-center items-center w-[60vw] mx-auto z-10">
             <CardSlider>
               {ProductCardSliderData.map((product, index) => (
-                <div className="relatve flex bg-[#ffffff] min-w-full h-[30em] " key={index}>
+                <div className="relatve flex bg-[#ffffff] min-w-full h-[30em]" key={index}>
                   <div className={`absolute top-0 left-[${index*100}%] min-w-full h-full`}>
                     <img src={product.img} alt={product.alt} className="h-full w-full" />
                   </div>
