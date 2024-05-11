@@ -44,7 +44,7 @@ function Home() {
                   <div className={`absolute top-0 left-[${index*100}%] min-w-full h-full`}>
                     <img src={product.img} alt={product.alt} className="h-full w-full" />
                   </div>
-                  <div className={`absolute top-0 right-[${index*100}%] w-full h-full flex flex-col justify-end items-end bg-gradient-to-l from-[black] to-[#00000069] px-[2em]`}>
+                  <div className={`absolute top-0 right-[${index*100}%] w-full h-full flex flex-col justify-end items-end bg-gradient-to-l from-[black] to-[#00000038] px-[2em]`}>
                     <h1 className="text-right text-bayavaOrange text-[2em] font-semibold">{product.title}</h1>
                     <p className="text-right text-[white] w-[60%] text-[14px] py-[1em]">{product.desc}</p>
                     <h2 className="text-right text-[white]"><del className="font-medium text-solidGray">₹{product.price}</del><span className="mx-3 font-bold text-[20px]">₹{product.price - product.discount}</span></h2>
