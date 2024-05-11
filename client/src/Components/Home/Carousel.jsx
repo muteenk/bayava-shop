@@ -24,8 +24,8 @@ const Carousel = ({slides}) => {
         <div className='flex relative transition-transform duration-500 ease-out' style={{transform: `translateX(-${current*100}%)`, zIndex:1}}>
             {
             slides.map((slide, index) => (
-                <div key={index} className={`relative min-w-[100vw] h-[88vh] bg-cover`} style={{background: `url('${slide.img}')`, backgroundPosition: 'center'}}>
-                    <div className="absolute h-full w-full bg-[#0000007e] z-0"></div>
+                <div key={index} className={`relative min-w-[100vw] h-[88vh]`} style={{background: `url('${slide.img}')`, backgroundPosition: 'center', backgroundSize: "cover"}}>
+                    <div className="absolute h-full w-full bg-[#00000070] z-0"></div>
                     {
                         (index === current) ? <>
                             <h1 className='absolute top-[11.5em] left-[10%] w-[30%] animate-fadeUp text-[#ff8a2b] font-crimson-pro font-bold text-[2em] z-10'>{slide.subTitle}</h1>
@@ -38,10 +38,10 @@ const Carousel = ({slides}) => {
         </div>
         <div className="absolute inset-0 flex items-center justify-between p-4 z-10">
             <button onClick={prevSlide} className="rounded-full bg-[white] font-bold text-[22px] px-[16px] py-[6px] hover:bg-softGray shadow-lg">
-                <i class="fa-solid fa-chevron-left"></i>
+                <i className="fa-solid fa-chevron-left"></i>
             </button>
             <button onClick={nextSlide} className="rounded-full bg-[white] font-bold text-[22px] px-[16px] py-[6px] hover:bg-softGray shadow-lg">
-                <i class="fa-solid fa-chevron-right"></i>
+                <i className="fa-solid fa-chevron-right"></i>
             </button>
         </div>
     </div>
