@@ -20,16 +20,16 @@ const CardSlider = ({ children: slides }) => {
       </div>
       <div className="absolute top-[50%] translate-y-[-50%] left-0 w-full flex items-center justify-between p-4 z-10">
         <button onClick={prevSlide} className="rounded-full bg-[white] font-bold text-[22px] px-[16px] py-[6px] hover:bg-softGray shadow-lg">
-            <i class="fa-solid fa-chevron-left"></i>
+            <i className="fa-solid fa-chevron-left"></i>
         </button>
         <button onClick={nextSlide} className="rounded-full bg-[white] font-bold text-[22px] px-[16px] py-[6px] hover:bg-softGray shadow-lg">
-            <i class="fa-solid fa-chevron-right"></i>
+            <i className="fa-solid fa-chevron-right"></i>
         </button>
       </div>
       <div className="absolute bottom-[-1.5em] flex">
         {
           slides.map((slide, index) => (
-            <div className={`h-2 w-2 rounded-full mx-2 ${(current === index) ? "bg-bayavaOrange" : "bg-[white]"}`}></div>
+            <div className={`h-2 w-2 rounded-full mx-2 ${(current === index) ? "bg-bayavaOrange" : "bg-[white]"}`} key={index}></div>
           ))
         }
       </div>

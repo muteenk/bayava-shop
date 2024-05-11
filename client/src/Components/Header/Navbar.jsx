@@ -34,7 +34,7 @@ function Navbar() {
 				<div>
 					<Link to="/" className="flex justify-center items-center text-3xl font-bold font-crimson">
 						<img src={Logo} className="h-[2em]" alt="" />
-						Bayava Shop <span className="text-[16px] mx-2"><i class="fa-solid fa-bag-shopping"></i></span>
+						Bayava Shop <span className="text-[16px] mx-2"><i className="fa-solid fa-bag-shopping"></i></span>
 					</Link>
 				</div>
 				<div></div>
@@ -42,7 +42,7 @@ function Navbar() {
 					<ul className="flex items-center justify-between">
 						<li className="relative mx-4 z-50">
 							<button className="peer text-lg font-semibold items-center" onMouseEnter={toggleAuthMenu} onMouseLeave={toggleAuthMenu}>
-								<i class="fa-solid fa-user text-[#494949]"></i>
+								<i className="fa-solid fa-user text-[#494949]"></i>
 							</button>
 							<div className="hidden peer-hover:block hover:block">
 								<AuthMenu />
@@ -50,12 +50,12 @@ function Navbar() {
 						</li>
 						<li className="mx-4">
 							<Link to="/cart" className="text-lg font-semibold">
-								<i class="fa-solid fa-heart text-[#494949]"></i>
+								<i className="fa-solid fa-heart text-[#494949]"></i>
 							</Link>
 						</li>
 						<li className="mx-4">
 							<Link to="/cart" className="text-lg font-semibold">
-								<i class="fa-solid fa-cart-shopping text-[#494949]"></i>
+								<i className="fa-solid fa-cart-shopping text-[#494949]"></i>
 							</Link>
 						</li>
 						
