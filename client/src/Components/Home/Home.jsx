@@ -36,7 +36,7 @@ function Home() {
       {/* Product Card Slider */}
       <div className="relative pb-[3em] bg-[url('https://images.unsplash.com/photo-1495461199391-8c39ab674295?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-center bg-cover"> 
         <div className="absolute h-full w-full bg-[#0000009d] z-0"></div>
-        <h1 className="relative text-[white] font-crimson font-bold text-[4em] text-center z-10 py-[1em]">Gracious Gifts</h1>
+        <h1 className="relative text-[white] font-crimson font-bold text-[4em] text-center z-10 py-[1em]">Gifts of Grace</h1>
         <div className="relative flex justify-center items-center w-[60vw] mx-auto z-10">
             <CardSlider>
               {ProductCardSliderData.map((product, index) => (
