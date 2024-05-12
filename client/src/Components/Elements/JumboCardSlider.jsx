@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CardSlider = ({ children: slides }) => {
+const JumboCardSlider = ({ children: slides }) => {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -37,4 +37,4 @@ const CardSlider = ({ children: slides }) => {
   );
 };
 
-export default CardSlider;
+export default JumboCardSlider;
