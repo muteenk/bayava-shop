@@ -10,8 +10,8 @@ const port = process.env.PORT || 4000;
 
 // MIDDLEWARE
 const corsOptions = {
+    origin: "http://localhost:3000",
     credentials: true,
-    origin: '*'  
 };
 
 app.use(cors(corsOptions));
@@ -22,10 +22,10 @@ app.get("/", (req, res) => {
 });
 
 // GET Operation
-app.get("/get", async (req, res) => {
+app.get("/getCategories", async (req, res) => {
     try {
-        const users = await poolDB.query("SELECT * FROM bayavasfdc.products__c");
-        res.status(200).json(users);
+        const categories = await poolDB.query("SELECT distinct on (category__c) category__c, cover_photo__c, family__c FROM bayavasfdc.products__c");
+        res.status(200).json({msg: "Success", data: categories.rows});
     } 
     catch (error) {
         console.error(error.message)

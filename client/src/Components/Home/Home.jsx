@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import axios from "axios"
+
 import Carousel from "./Carousel"
 import {CarouselData, ProductCardSliderData, newArrivalCards, categoriesCardData} from "./HomeData"
 import ImageCard from "../Elements/ImageCard"
@@ -6,7 +9,21 @@ import JumboCardSlider from "../Elements/JumboCardSlider"
 import Categories from "./Categories"
 import CardSection from "../Elements/CardSection"
 
+import Loading from "../Elements/Loading"
+
 function Home() {
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+		axios
+			.get("/getCategories")
+			.then((res) => {
+				setCategories(res.data.data);
+			})
+			.catch((err) => console.log(err));
+	}, []);
+
   return (
     <div>
 
@@ -62,7 +79,10 @@ function Home() {
 
 
       {/* Categories */}
-      <Categories categories={categoriesCardData}/>
+      {
+        (categories.length === 0) ? <Loading /> : <Categories categories={categories}/>
+      }
+      
 
 
       {/* Limited Stock */}
