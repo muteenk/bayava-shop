@@ -6,6 +6,7 @@ import YogaStore from '../Components/YogaStore/YogaStore'
 import AyurvedaStore from '../Components/AyurvedaStore/AyurvedaStore'
 import Login from '../Components/Login/Login'
 import Signup from '../Components/Signup/Signup'
+import Footer from '../Components/Footer/Footer'
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<Signup />} />
         </Routes>
+        <Footer />
     </div>
   )
 }
