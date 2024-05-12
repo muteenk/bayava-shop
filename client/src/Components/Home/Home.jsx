@@ -2,9 +2,9 @@ import { Link } from "react-router-dom"
 import Carousel from "./Carousel"
 import {CarouselData, ProductCardSliderData, newArrivalCards, categoriesCardData} from "./HomeData"
 import ImageCard from "../Elements/ImageCard"
-import CardSlider from "../Elements/CardSlider"
-import ArrivalCards from "./ArrivalCards"
+import JumboCardSlider from "../Elements/JumboCardSlider"
 import Categories from "./Categories"
+import CardSection from "../Elements/CardSection"
 
 function Home() {
   return (
@@ -38,7 +38,7 @@ function Home() {
         <div className="absolute h-full w-full bg-[#0000009d] z-0"></div>
         <h1 className="relative text-[white] font-crimson font-bold text-[4em] text-center z-10 py-[1em]">Gifts of Grace</h1>
         <div className="relative flex justify-center items-center w-[60vw] mx-auto z-10">
-            <CardSlider>
+            <JumboCardSlider>
               {ProductCardSliderData.map((product, index) => (
                 <div className="relatve flex bg-[#ffffff] min-w-full h-[30em]" key={index}>
                   <div className={`absolute top-0 left-[${index*100}%] min-w-full h-full`}>
@@ -52,20 +52,22 @@ function Home() {
                   </div>
                 </div>
               ))}
-            </CardSlider>
+            </JumboCardSlider>
         </div>
       </div>
 
 
       {/* New Arrivals Section */}
-      
-      <ArrivalCards newArrivalCards={newArrivalCards} />
+      <CardSection cards={newArrivalCards} title="New Arrivals" link="/" />
 
 
       {/* Categories */}
-
       <Categories categories={categoriesCardData}/>
-      
+
+
+      {/* Limited Stock */}
+      <CardSection cards={newArrivalCards} title="Limited Stock" link="/" />
+
     </div>
   )
 }

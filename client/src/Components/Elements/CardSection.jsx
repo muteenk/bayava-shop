@@ -1,16 +1,16 @@
-
 import { Link } from "react-router-dom"
 
-const ArrivalCards = ({newArrivalCards}) => {
+
+const CardSection = ({cards, title, viewAll}) => {
   return (
     <div className="px-[3em] mt-[2em]">
         <header className="flex justify-between items-center px-4 py-5">
-          <h1 className="font-bold font-crimson-pro text-[2em]">New Arrivals</h1>
-          <Link to="/" className="underline">View All Items</Link>
+          <h1 className="font-bold font-crimson-pro text-[2em]">{title}</h1>
+          <Link to={viewAll} className="underline">View All Items</Link>
         </header>
         <div className="flex flex-wrap justify-center items-center">
           {
-            newArrivalCards.map((product, index) => (
+            cards.map((product, index) => (
               <div className="flex flex-col bg-[#ffffff] w-[22em] h-[30em] m-4" key={index}>
                 <Link to={product.link}>
                   <img src={product.img} alt={product.alt} className="w-full h-[15em] rounded-md" />
@@ -28,4 +28,4 @@ const ArrivalCards = ({newArrivalCards}) => {
   )
 }
 
-export default ArrivalCards
+export default CardSection
