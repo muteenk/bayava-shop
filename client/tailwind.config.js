@@ -14,7 +14,8 @@ export default {
 			midGray: "#A6A6A6",
 			solidGray: "gray",
 			hoverOverBrown: "#db6435",
-			bayavaOrange: "#cc582a"
+			bayavaOrange: "#cc582a",
+			bayavaYellow: "#FF9A1F",
 		},
 		extend: {
 			animation: {
