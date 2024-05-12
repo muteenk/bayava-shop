@@ -10,7 +10,7 @@ const port = process.env.PORT || 4000;
 
 // MIDDLEWARE
 const corsOptions = {
-    // credentials: true,
+    credentials: true,
     origin: '*'  
 };
 
