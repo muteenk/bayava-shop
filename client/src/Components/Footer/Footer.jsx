@@ -3,8 +3,8 @@ import Logo from "../../assets/Logo.png"
 
 const Footer = () => {
   return (
-    <footer className="bg-bayavaYellow rounded-tl-[5em]">
-        <div className="flex justify-center items-start px-[7em] pt-[3em]">
+    <footer className="bg-bayavaYellow rounded-tl-[7em]">
+        <div className="flex justify-center items-start px-[7em] pt-[4.5em]">
             <div className="flex flex-col w-[22%] mx-6">
                 <div className="bg-[white] w-fit rounded-full mb-8">
                   <img src={Logo} alt="Bayava" />
@@ -45,7 +45,8 @@ const Footer = () => {
                 </ul>
             </div>
         </div>
-        <p className="text-[black] font-crimson-pro font-bold px-8 py-8 text-[18px]">
+        <hr className="w-[85%] mx-auto mt-10 border-[1.5px]" />
+        <p className="text-[black] font-crimson-pro font-bold px-[8em] py-8 text-[18px]">
             All Rights Reserved &copy; Bayava
         </p>
     </footer>
