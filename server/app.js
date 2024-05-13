@@ -32,6 +32,16 @@ app.get("/getCategories", async (req, res) => {
     } 
 });
 
+app.get("/getProducts", async (req, res) => {
+    try {
+        const products = await poolDB.query("SELECT * FROM bayavasfdc.products__c");
+        res.status(200).json({msg: "Success", data: products.rows});
+    } 
+    catch (error) {
+        console.error(error.message)
+    } 
+})
+
 // LISTENER
 app.listen(port, () => {
     console.log(`Server is running on port http://localhost:${port}`);
