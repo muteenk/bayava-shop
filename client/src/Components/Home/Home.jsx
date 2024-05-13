@@ -75,7 +75,7 @@ function Home() {
 
 
       {/* New Arrivals Section */}
-      <CardSection cards={newArrivalCards} title="New Arrivals" link="/" />
+      <CardSection cards={newArrivalCards} title="New Arrivals" viewAll="/products" />
 
 
       {/* Categories */}
@@ -86,7 +86,7 @@ function Home() {
 
 
       {/* Limited Stock */}
-      <CardSection cards={newArrivalCards} title="Limited Stock" link="/" />
+      <CardSection cards={newArrivalCards} title="Limited Stock" viewAll="/products" />
 
     </div>
   )
