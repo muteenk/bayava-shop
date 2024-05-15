@@ -38,7 +38,7 @@ app.get("/getProducts", async (req, res) => {
         res.status(200).json({msg: "Success", data: products.rows});
     } 
     catch (error) {
-        console.error(error.message)
+        res.status(500).json({msg: "Failed", error: error.message});
     } 
 })
 
