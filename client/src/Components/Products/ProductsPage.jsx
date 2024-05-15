@@ -16,13 +16,23 @@ const ProductsPage = () => {
   const fetchProductList = useMemo(
     () => async () => {
       try {
-        const response = await axios.get("/getProducts"); // Replace with your API endpoint
+        const cancelToken = axios.CancelToken.source();
+        const response = await axios.get("/getProducts", {cancelToken: cancelToken.token}); // Replace with your API endpoint
         setProducts(response.data.data);
       } catch (error) {
-        setError(error);
+        if (axios.isCancel(error)) {
+          console.log("Request cancelled");
+        }
+        else {
+          setError(error);
+        }
+      }
+
+      return () => {
+        cancelToken.cancel();
       }
     },
-    [dependency]
+    []
   );
 
   useEffect(() => {
