@@ -12,6 +12,7 @@ const ProductsPage = () => {
   const [dependency, setDependency] = useState(0);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [filterParam, setFilterParam] = useState("All");
 
   const fetchProductList = useMemo(
     () => async () => {
@@ -38,6 +39,14 @@ const ProductsPage = () => {
   useEffect(() => {
     fetchProductList();
   }, []);
+
+
+  const search = (data) => {
+    return data.filter((product) => {
+      return product.name.toLowerCase().includes(searchQuery.toLowerCase());
+    });
+  }
+
 
   return (
     <div className="mt-36">
@@ -71,7 +80,7 @@ const ProductsPage = () => {
         {products.length === 0 && error === null ? (
           <Loading />
         ) : error === null ? (
-          products.map((product, index) => (
+          search(products).map((product, index) => (
             <div
               className="flex flex-col bg-[#ffffff] w-[22em] h-[30em] m-4"
               key={index}
@@ -104,9 +113,11 @@ const ProductsPage = () => {
             </div>
           ))
         ) : (
-          <h1 className="text-center text-[2em] font-bold text-red-500">
-            Failed to fetch products
-          </h1>
+          <div>
+            <h1 className="text-center text-[2em] font-bold text-red-500 border border-bayavaOrange px-9 py-4 rounded-md my-20">
+              Oops! Failed to fetch products
+            </h1>
+          </div>
         )}
       </div>
     </div>
