@@ -14,7 +14,7 @@ function Navbar() {
 
 	
 	return (
-		<div className="relative top-0 left-0 z-40 w-full">
+		<div className="fixed top-0 left-0 z-40 w-full">
 			<nav className="w-full py-[10px] px-[6em] flex items-center justify-around bg-softGray drop-shadow-lg">
 				<div>
 					<form

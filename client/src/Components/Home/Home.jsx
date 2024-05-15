@@ -1,35 +1,54 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useMemo } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 
 import Carousel from "./Carousel"
-import {CarouselData, ProductCardSliderData, newArrivalCards, categoriesCardData} from "./HomeData"
+import {CarouselData, ProductCardSliderData} from "./HomeData"
 import ImageCard from "../Elements/ImageCard"
 import JumboCardSlider from "../Elements/JumboCardSlider"
 import Categories from "./Categories"
 import CardSection from "../Elements/CardSection"
 
 import Loading from "../Elements/Loading"
+import ImageComponent from "../Elements/ImageComponent"
 
 function Home() {
 
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [dependency, setDependency] = useState(0);
+
+  const fetchProductList = useMemo(() => async () => {
+    try {
+      const response = await axios.get('/getProducts'); // Replace with your API endpoint
+      setProducts(response.data.data);
+    } catch (error) {
+      console.error('Error fetching product list:', error);
+    }
+  }, [dependency]);
+
+  const fetchCategoies = useMemo(() => async () => {
+    try {
+      const response = await axios.get('/getCategories'); // Replace with your API endpoint
+      setCategories(response.data.data);
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
+  }, [dependency]);
+
+
 
   useEffect(() => {
-		axios
-			.get("/getCategories")
-			.then((res) => {
-				setCategories(res.data.data);
-			})
-			.catch((err) => console.log(err));
+    fetchCategoies();
+    fetchProductList();
 	}, []);
 
   return (
     <div>
 
       {/* Hero Carousel Section */}
-      <div className="bg-gradient-to-b from-softGray to-[white] w-screen mx-auto">
-        <div className="flex justify-center items-center w-screen mx-auto">
+      <div className="bg-gradient-to-b from-softGray to-[white] w-screen mx-auto mt-28">
+        <div className="flex justify-center items-center w-full mx-auto">
           <Carousel slides={CarouselData} />
         </div>
       </div>
@@ -75,7 +94,22 @@ function Home() {
 
 
       {/* New Arrivals Section */}
-      <CardSection cards={newArrivalCards} title="New Arrivals" viewAll="/products" />
+      <CardSection title="New Arrivals" viewAll="/products">
+          {(products.length === 0) ? <Loading /> : 
+            products.reverse().splice(0, 4).map((product, index) => (
+              <div className="flex flex-col bg-[#ffffff] w-[22em] h-[30em] m-4" key={index}>
+                  <Link to={"/"}>
+                    <ImageComponent src={product.cover_photo__c} alt={product.name} className="w-full h-[17em] rounded-md" />
+                  </Link>
+                  <Link to={"/"} >
+                    <h1 className="text-[1.5em] font-bold">{product.name}</h1>
+                    <p className="text-[1.2em] font-medium">₹{product.price__c}</p>
+                  </Link>
+                  <Link to={"/"} className="text-center text-[1.2em] bg-bayavaOrange hover:bg-hoverOverBrown text-[white] px-4 py-2 my-3 rounded-md">Add to Cart</Link>
+              </div>
+            ))
+          }
+      </CardSection>
 
 
       {/* Categories */}
@@ -86,7 +120,22 @@ function Home() {
 
 
       {/* Limited Stock */}
-      <CardSection cards={newArrivalCards} title="Limited Stock" viewAll="/products" />
+      <CardSection title="Limited Stock" viewAll="/products">
+          {(products.length === 0) ? <Loading /> : 
+            products.splice(0, 4).map((product, index) => (
+              <div className="flex flex-col bg-[#ffffff] w-[22em] h-[30em] m-4" key={index}>
+                  <Link to={"/"}>
+                    <ImageComponent src={product.cover_photo__c} alt={product.name} className="w-full h-[17em] rounded-md" />
+                  </Link>
+                  <Link to={"/"} >
+                    <h1 className="text-[1.5em] font-bold">{product.name}</h1>
+                    <p className="text-[1.2em] font-medium">₹{product.price__c}</p>
+                  </Link>
+                  <Link to={"/"} className="text-center text-[1.2em] bg-bayavaOrange hover:bg-hoverOverBrown text-[white] px-4 py-2 my-3 rounded-md">Add to Cart</Link>
+              </div>
+            ))
+          }
+      </CardSection>
 
     </div>
   )
