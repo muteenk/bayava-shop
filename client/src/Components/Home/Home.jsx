@@ -44,7 +44,7 @@ function Home() {
 	}, []);
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
 
       {/* Hero Carousel Section */}
       <div className="bg-gradient-to-b from-softGray to-[white] w-screen mx-auto mt-28">
