@@ -11,6 +11,7 @@ import CardSection from "../Elements/CardSection"
 
 import Loading from "../Elements/Loading"
 import ImageComponent from "../Elements/ImageComponent"
+import ProductCard from "../Elements/ProductCard"
 
 function Home() {
 
@@ -97,16 +98,7 @@ function Home() {
       <CardSection title="New Arrivals" viewAll="/products">
           {(products.length === 0) ? <Loading /> : 
             products.reverse().splice(0, 4).map((product, index) => (
-              <div className="flex flex-col bg-[#ffffff] w-[22em] h-[30em] m-4" key={index}>
-                  <Link to={"/"}>
-                    <ImageComponent src={product.cover_photo__c} alt={product.name} className="w-full h-[17em] rounded-md" />
-                  </Link>
-                  <Link to={"/"} >
-                    <h1 className="text-[1.5em] font-bold">{product.name}</h1>
-                    <p className="text-[1.2em] font-medium">₹{product.price__c}</p>
-                  </Link>
-                  <Link to={"/"} className="text-center text-[1.2em] bg-bayavaOrange hover:bg-hoverOverBrown text-[white] px-4 py-2 my-3 rounded-md">Add to Cart</Link>
-              </div>
+              <ProductCard data={product} key={index} />
             ))
           }
       </CardSection>
@@ -123,16 +115,7 @@ function Home() {
       <CardSection title="Limited Stock" viewAll="/products">
           {(products.length === 0) ? <Loading /> : 
             products.splice(0, 4).map((product, index) => (
-              <div className="flex flex-col bg-[#ffffff] w-[22em] h-[30em] m-4" key={index}>
-                  <Link to={"/"}>
-                    <ImageComponent src={product.cover_photo__c} alt={product.name} className="w-full h-[17em] rounded-md" />
-                  </Link>
-                  <Link to={"/"} >
-                    <h1 className="text-[1.5em] font-bold">{product.name}</h1>
-                    <p className="text-[1.2em] font-medium">₹{product.price__c}</p>
-                  </Link>
-                  <Link to={"/"} className="text-center text-[1.2em] bg-bayavaOrange hover:bg-hoverOverBrown text-[white] px-4 py-2 my-3 rounded-md">Add to Cart</Link>
-              </div>
+              <ProductCard data={product} key={index} />
             ))
           }
       </CardSection>
