@@ -55,6 +55,9 @@ const ProductsPage = () => {
           <input
             type="text"
             placeholder="Search"
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+            }}
             className="bg-slate-200 focus:outline-none font-crimson-pro text-lg font-medium w-[30em] rounded-md py-[8px] px-6 border border-r-0 rounded-r-none border-midGray transition-all duration-300 ease-in-out"
           />
           <button className="bg-[white] hover:bg-softGray py-[10px] px-7 border border-l-0 border-midGray rounded-md rounded-l-none">
@@ -85,7 +88,7 @@ const ProductsPage = () => {
               className="flex flex-col bg-[#ffffff] w-[22em] h-[30em] m-4"
               key={index}
             >
-              <Link to={"/"}>
+              <Link to={`/product/${product.id}`}>
                 <Suspense
                   fallback={
                     <div
@@ -99,8 +102,6 @@ const ProductsPage = () => {
                     className="min-w-full h-[17em] rounded-md"
                   />
                 </Suspense>
-              </Link>
-              <Link to={"/"}>
                 <h1 className="text-[1.5em] font-bold">{product.name}</h1>
                 <p className="text-[1.2em] font-medium">₹{product.price__c}</p>
               </Link>
@@ -113,11 +114,7 @@ const ProductsPage = () => {
             </div>
           ))
         ) : (
-          <div>
-            <h1 className="text-center text-[2em] font-bold text-red-500 border border-bayavaOrange px-9 py-4 rounded-md my-20">
-              Oops! Failed to fetch products
-            </h1>
-          </div>
+          <ErrorPanel msg={"Oops! Failed to Get Products"} />
         )}
       </div>
     </div>
