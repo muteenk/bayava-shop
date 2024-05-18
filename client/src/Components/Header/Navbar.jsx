@@ -33,7 +33,7 @@ function Navbar() {
 				</div>
 				<div>
 					<Link to="/" className="flex justify-center items-center text-3xl font-bold font-crimson">
-						<img src={Logo} className="h-[2em]" alt="" />
+						<img src={Logo} className="h-[2em] mx-3" alt="" />
 						Bayava Shop <span className="text-[16px] mx-2"><i className="fa-solid fa-bag-shopping"></i></span>
 					</Link>
 				</div>

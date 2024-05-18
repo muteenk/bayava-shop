@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ImageComponent from "../Elements/ImageComponent";
 import Loading from "../Elements/Loading";
-import ErrorPanel from "../Elements/ErrorDisplay";
+import ErrorPanel from "../Elements/ErrorPanel";
 
 const ProductDisplay = () => {
   const { id } = useParams();
