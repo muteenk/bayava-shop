@@ -42,9 +42,18 @@ const ProductsPage = () => {
     fetchProductList();
   }, []);
 
+  const searchData = (data) => {
 
-  const search = (data) => {
-    return data.filter((product) => {
+    let updatedData;
+    if (filterParam === "Low") {
+      updatedData = data.sort((a, b) => a.price__c - b.price__c);
+    } else if (filterParam === "High") {
+      updatedData = data.sort((a, b) => b.price__c - a.price__c);
+    } else {
+      updatedData = data;
+    }
+
+    return updatedData.filter((product) => {
       return product.name.toLowerCase().includes(searchQuery.toLowerCase());
     });
   }
@@ -68,15 +77,15 @@ const ProductsPage = () => {
         </div>
 
         <select
-          // onChange={(e) => {
-          // setFilterParam(e.target.value);
-          // }}
           className="bg-[#ffffff] focus:outline-none font-crimson-pro text-lg font-medium w-[15em] rounded-md py-[12px] px-6 border border-midGray transition-all duration-300 ease-in-out ml-4 text-solidGray"
           aria-label="Filter Countries By Region"
+          onChange={(e) => {
+            setFilterParam(e.target.value);
+          }}
         >
           <option value="All">All</option>
-          <option value="Africa">Price: low to high</option>
-          <option value="Americas">Price: high to low</option>
+          <option value="Low">Price: low to high</option>
+          <option value="High">Price: high to low</option>
         </select>
         {/* <span className="focus"></span> */}
       </div>
@@ -85,7 +94,7 @@ const ProductsPage = () => {
         {products.length === 0 && error === null ? (
           <Loading />
         ) : error === null ? (
-          search(products).map((product, index) => (
+          searchData(products).map((product, index) => (
             <ProductCard key={index} data={product} />
           ))
         ) : (
