@@ -3,18 +3,26 @@ import { Link } from "react-router-dom";
 import MiniNavbar from "./MiniNavbar";
 import AuthMenu from "./AuthMenu";
 import Logo from "../../assets/Logo.png";
+import Sidebar from "./Sidebar";
 
 function Navbar() {
 	
 	const [authMenu, setAuthMenu] = useState(false);
+	const [sidebarTrigger, setSidebarTrigger] = useState(false);
 
 	const toggleAuthMenu = () => {
 		setAuthMenu(!authMenu);
 	}
 
+	const toggleSidebar = () => {
+		setSidebarTrigger(prev=>!prev);
+		document.body.style.overflowY = 'hidden';
+	}
+
 	
 	return (
 		<div className="fixed top-0 left-0 z-40 w-full">
+			<Sidebar trigger={sidebarTrigger} setTrigger={setSidebarTrigger} />
 			<nav className="w-full py-[10px] lg:px-[4em] flex items-center justify-between md:justify-around bg-softGray drop-shadow-lg">
 				<div className="hidden lg:block">
 					<form
@@ -33,7 +41,7 @@ function Navbar() {
 				</div>
 				<div className="flex items-center">
 					<div className="mx-5 sm:mx-8">
-						<button className="block lg:hidden">
+						<button className="block lg:hidden" onClick={toggleSidebar}>
 							<i className="fa-solid fa-bars text-lg sm:text-2xl"></i>
 						</button>
 					</div>
