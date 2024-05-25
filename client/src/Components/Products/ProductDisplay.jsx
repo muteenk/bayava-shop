@@ -76,7 +76,7 @@ const ProductDisplay = () => {
               <button className="bg-bayavaOrange text-[#fff] px-5 py-2 rounded-md">Add to Cart</button>
               <button className="bg-[#fff] text-bayavaOrange px-5 py-2 rounded-md shadow-lg border-[1px] border-bayavaOrange mx-5">Buy Now</button>
             </div>
-            <div className="bg-[#eecda3] shadow-xl px-5 py-7 my-6">
+            <div className="bg-orangeTint shadow-xl px-5 py-7 my-6">
               <h2  className="font-crimson text-[2em] font-bold">Product Details</h2>
               <p className="">{product && product.product_details__c}</p>
             </div>
