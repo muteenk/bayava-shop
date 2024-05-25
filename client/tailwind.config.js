@@ -16,6 +16,7 @@ export default {
 			hoverOverBrown: "#db6435",
 			bayavaOrange: "#cc582a",
 			bayavaYellow: "#FF9A1F",
+			orangeTint: "#eecda3"
 		},
 		extend: {
 			animation: {

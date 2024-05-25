@@ -55,7 +55,7 @@ function Home() {
       </div>
 
       {/* Category Cards */}
-      <div className="relative top-[-6em] flex justify-center items-center gap-3">
+      <div className="relative top-[-5em] flex flex-wrap bg-orangeTint sm:bg-[transparent] justify-center items-center gap-3 py-[2em] pb-[5em]">
         <ImageCard imgSrc="https://images.unsplash.com/photo-1661915606983-cc9759b99343?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cnVkcmFrc2h8ZW58MHwwfDB8fHww">
           <h1 className="text-4xl text-[white]">Rudraksh</h1>
         </ImageCard>

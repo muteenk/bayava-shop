@@ -61,8 +61,8 @@ const ProductsPage = () => {
 
   return (
     <div className="mt-36">
-      <div className="flex justify-between items-center mx-[13em] py-[4em]">
-        <div className="flex items-center">
+      <div className="flex flex-col justify-center items-start mx-[4em] py-[4em]">
+        <div className="flex justify-center items-center py-3 w-full">
           <input
             type="text"
             placeholder="Search"
@@ -77,7 +77,7 @@ const ProductsPage = () => {
         </div>
 
         <select
-          className="bg-[#ffffff] focus:outline-none font-crimson-pro text-lg font-medium w-[15em] rounded-md py-[12px] px-6 border border-midGray transition-all duration-300 ease-in-out ml-4 text-solidGray"
+          className="bg-[#ffffff] focus:outline-none font-crimson-pro text-lg font-medium w-[15em] rounded-md py-[12px] px-6 border border-midGray transition-all duration-300 ease-in-out my-5 text-solidGray"
           aria-label="Filter Countries By Region"
           onChange={(e) => {
             setFilterParam(e.target.value);
