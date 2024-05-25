@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-bayavaYellow rounded-tl-[7em] mt-42">
         <div className="flex flex-wrap justify-center items-start px-[7em] pt-[4.5em]">
-            <div className="flex flex-col w-[22%] mx-6">
+            <div className="flex flex-col w-[22%] mx-6 mb-5">
                 <div className="bg-[white] w-fit rounded-full mb-8">
                   <img src={Logo} alt="Bayava" />
                 </div>
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         <hr className="w-[85%] mx-auto mt-10 border-[1.5px]" />
         <p className="text-[black] font-crimson-pro font-bold px-[8em] py-8 text-[18px]">
-            All Rights Reserved &copy; Bayava
+            All Rights Reserved &copy; Daya
         </p>
     </footer>
   )
