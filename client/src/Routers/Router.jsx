@@ -17,7 +17,7 @@ function Router() {
             <Route path="/" element={<Home />} />
             <Route path='/products' element={<ProductsPage />} />
             <Route path='/product/:id' element={<ProductDisplay />} />
-            <Route path='/ayurveda-store' element={<AyurvedaStore />} />
+            <Route path='/ayurveda-store' element={<ProductsPage />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='*' element={<Home />} />
