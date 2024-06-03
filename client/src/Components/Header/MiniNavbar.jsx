@@ -23,7 +23,7 @@ function MiniNavbar() {
         <ul className="flex items-center justify-between w-full md:px-60 lg:px-80 bg-smokeBrown py-2">
           <li className="group relative text-[white] font-light">
             <Link
-              to="/products"
+              to="/yoga-store"
               className="peer group-hover:text-hoverOverBrown"
             >
               Yoga Store

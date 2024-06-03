@@ -72,7 +72,7 @@ const Sidebar = ({ trigger, setTrigger }) => {
             <Link onClick={toggleSidebar} to="/" className="block w-full px-4 py-3 hover:bg-softGray hover:text-bayavaOrange font-crimson-pro text-[18px] font-medium">Home</Link>
           </li>
           <li className="w-full">
-            <Link onClick={toggleSidebar} to="/products" className="block w-full px-4 py-3 hover:bg-softGray hover:text-bayavaOrange font-crimson-pro text-[18px] font-medium">Yoga Store</Link>
+            <Link onClick={toggleSidebar} to="/yoga-store" className="block w-full px-4 py-3 hover:bg-softGray hover:text-bayavaOrange font-crimson-pro text-[18px] font-medium">Yoga Store</Link>
           </li>
           <li className="w-full">
             <Link onClick={toggleSidebar} to="/ayurveda-store" className="block w-full px-4 py-3 hover:bg-softGray hover:text-bayavaOrange font-crimson-pro text-[18px] font-medium">Ayurveda Store</Link>

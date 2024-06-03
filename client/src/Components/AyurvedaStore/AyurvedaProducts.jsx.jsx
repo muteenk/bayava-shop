@@ -1,6 +1,5 @@
-import { useState, useEffect, useMemo, lazy, Suspense } from "react";
+import { useState, useEffect, useMemo} from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 import Loading from "../Elements/Loading";
 import ErrorPanel from "../Elements/ErrorPanel";

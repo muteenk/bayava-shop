@@ -5,11 +5,8 @@ import { Link } from "react-router-dom";
 import Loading from "../Elements/Loading";
 import ErrorPanel from "../Elements/ErrorPanel";
 import ProductCard from "../Elements/ProductCard";
-// import ImageComponent from "../Elements/ImageComponent";
 
-const ImageComponent = lazy(() => import("../Elements/ImageComponent"));
-
-const ProductsPage = () => {
+const YogaProducts = () => {
   const [products, setProducts] = useState([]);
   const [dependency, setDependency] = useState(0);
   const [error, setError] = useState(null);
@@ -105,4 +102,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default YogaProducts;

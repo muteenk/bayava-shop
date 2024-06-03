@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../Components/Header/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from '../Components/Home/Home'
-import ProductsPage from '../Components/YogaStore/ProductsPage'
+import ProductsPage from '../Components/YogaStore/YogaProducts.jsx'
 import ProductDisplay from '../Components/YogaStore/ProductDisplay'
 import AyurvedaStore from '../Components/AyurvedaStore/AyurvedaProducts.jsx'
 import Login from '../Components/Login/Login'
@@ -15,7 +15,7 @@ function Router() {
         <Navbar />
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path='/products' element={<ProductsPage />} />
+            <Route path='/yoga-store' element={<ProductsPage />} />
             <Route path='/product/:id' element={<ProductDisplay />} />
             <Route path='/ayurveda-store' element={<AyurvedaStore />} />
             <Route path='/login' element={<Login />} />
