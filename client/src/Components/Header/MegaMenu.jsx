@@ -23,8 +23,8 @@ export const YogaMegaMenu = () => {
 	}, []);
 
   return (
-    <div className="absolute top-0 left-[-10em]">
-      <div className=" bg-smokeYellow text-[black] w-[80vw] h-[24em] px-32 py-4 mt-10">
+    <div className="absolute top-5 left-[-10em]">
+      <div className=" bg-smokeYellow text-[black] w-[80vw] h-[24em] px-32 py-4 mt-5">
         <div className="flex justify-start items-start flex-wrap">
           {
             categories.map((category, index) => (
@@ -39,8 +39,8 @@ export const YogaMegaMenu = () => {
 
 export const AyurvedaMegaMenu = () => {
   return (
-    <div className="absolute top-0 left-[-60vw]">
-      <div className=" bg-smokeYellow text-[black] w-[80vw] h-[24em] px-32 py-4 mt-10">
+    <div className="absolute top-5 left-[-60vw]">
+      <div className=" bg-smokeYellow text-[black] w-[80vw] h-[24em] px-32 py-4 mt-5">
         <div className="flex justify-start items-start flex-wrap">
           Ayurveda
         </div>

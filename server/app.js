@@ -32,7 +32,7 @@ app.get("/getCategories", async (req, res) => {
     } 
 });
 
-app.get("/getProducts", async (req, res) => {
+app.get("/getAllProducts", async (req, res) => {
     try {
         const products = await poolDB.query("SELECT * FROM bayavasfdc.products__c");
         res.status(200).json({msg: "Success", data: products.rows});
@@ -47,6 +47,17 @@ app.get("/getProduct/:id", async (req, res) => {
         const { id } = req.params;
         const product = await poolDB.query("SELECT * FROM bayavasfdc.products__c WHERE id = $1", [id]);
         res.status(200).json({msg: "Success", data: product.rows});
+    } 
+    catch (error) {
+        res.status(500).json({msg: "Failed", error: error.message});
+    } 
+})
+
+app.get("/getProducts/family/:family", async (req, res) => {
+    try {
+        const { family } = req.params;
+        const products = await poolDB.query("SELECT * FROM bayavasfdc.products__c WHERE family__c = $1", [family]);
+        res.status(200).json({msg: "Success", data: products.rows});
     } 
     catch (error) {
         res.status(500).json({msg: "Failed", error: error.message});
